@@ -15,5 +15,9 @@ You can add a few more parameters to your route such as VERBS like GET, PUT, PAT
 
 You can add a SCHEME which basically means the way you want the route to be accessed, with secure or non secure
 Therefore, HTTPS or HTTP.  
-If the page were to be accessed with the wrong SCHEME on your local server, you will see a message "this page is not accessible"
+If the page were to be accessed with the wrong SCHEME on your local server, you will see a message "this page is not accessible"  
+
+The path can contain a dynamic ID which REQUIRES a type of characters such as letters only or digits only.  
+To specify this, it needs to indicate requirements option within Route and use Regex  
+Please have a look at the example in DefaultController to have a better understanding of such use with digits requirements 
 

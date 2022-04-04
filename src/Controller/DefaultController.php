@@ -17,18 +17,26 @@ class DefaultController {
 
     #[
         Route(
-            path:'/blog/{name?meow}',
+            path:'/blog/{id<\d+>?5}',
             name: 'blog',
             methods: ["GET"],
             schemes:["HTTPS"],
+            requirements: [
+                'id' => '\d+'
+            ]
             // defaults: [
             //     'name' => 'dupont'
             // ]
+
+            // defaults: [
+                // 'id' => ''
+                // ]
+        
         )
     ]
     public function blog(Request $request) {
 
-        $title = $request->attributes->get('name');
+        $title = $request->attributes->get('id');
 
         dd($title);
 
