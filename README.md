@@ -21,3 +21,6 @@ The path can contain a dynamic ID which REQUIRES a type of characters such as le
 To specify this, it needs to indicate requirements option within Route and use Regex  
 Please have a look at the example in DefaultController to have a better understanding of such use with digits requirements 
 
+Priority for routes can be indicated so a METHOD is read by the router based on this priority order.  
+This option has to be added to the Route. The bigger the value the biggest is the priority to be read first
+

@@ -10,20 +10,34 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController {
     public function index(Request $requestJson) {
         dd($requestJson);
+
         $response = new JsonResponse(['Salutations:
         ' => 'Hey']);
+
         return $response;
     }
 
     #[
         Route(
-            path:'/blog/{id<\d+>?5}',
+            path:'/blog/homepage', 
+            methods: ['GET'],
+            name: 'homepage',
+            priority: 1
+        )
+    ]
+    public function blogHomePage() {
+        return new Response('blog Homepage');
+    }
+
+    #[
+        Route(
+            path:'/blog/{name}',
             name: 'blog',
             methods: ["GET"],
             schemes:["HTTPS"],
-            requirements: [
-                'id' => '\d+'
-            ]
+            // requirements: [
+            //     'id' => '\d+'
+            // ]
             // defaults: [
             //     'name' => 'dupont'
             // ]
