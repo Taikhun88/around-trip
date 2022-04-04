@@ -15,7 +15,9 @@ class DefaultController {
     #[
         Route(
             path:'/blog',
-            name: 'blog'
+            name: 'blog',
+            methods: ["GET"],
+            schemes:["HTTPS"]
         )
     ]
     public function blog() {
