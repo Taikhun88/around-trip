@@ -2,12 +2,17 @@
 
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Session\Storage\Proxy\AbstractProxy;
+use Symfony\Component\Routing\Annotation\Route;
 
-class DefaultController {
+class DefaultController extends AbstractController 
+{
     public function index() {
-        $response = new Response('<h1>Hello World</h1>
-        ');
+        $response = new JsonResponse(['<h1>Hello World</h1>
+        ']);
+
         return $response;
     }
 }
