@@ -23,7 +23,7 @@ class DefaultController {
             path:'/homepage', 
             methods: ['GET'],
             name: 'homepage',
-            priority: 1
+            // priority: 1
         )
     ]
     public function blogHomePage() {
@@ -36,7 +36,7 @@ class DefaultController {
             name: 'blog',
             methods: ["GET"],
             schemes:["HTTPS"],
-            host: '127.0.0.1'
+            // host: '127.0.0.1'
             // requirements: [
             //     'id' => '\d+'
             // ]
@@ -52,7 +52,7 @@ class DefaultController {
     ]
     public function blog(Request $request) {
 
-        $title = $request->attributes->get('id');
+        $title = $request->query->get('title');
 
         dd($title);
 

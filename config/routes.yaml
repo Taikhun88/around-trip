@@ -6,6 +6,7 @@ redirectHomepage:
    path: /homepage
    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
    defaults: 
-      route: 'blog_homepage'
-      permanent: true
-      keepQueryParams: true
+      route: 'blog/{name}'
+      title: 'test title'
+      permanent: false
+      keepQueryParams: false
