@@ -24,3 +24,9 @@ Please have a look at the example in DefaultController to have a better understa
 Priority for routes can be indicated so a METHOD is read by the router based on this priority order.  
 This option has to be added to the Route. The bigger the value the biggest is the priority to be read first
 
+The option HOST for the route serves the purpose of allowing or not access to some domain or subdomains.  
+See the example  
+
+Use of prefix for the methods routes. Giving a common starting route defined above the class.  
+See the example
+
