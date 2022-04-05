@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ asset('./css/style.css') }}">
+		<title>Document</title>
+	</head>
+	<body>
+		<h2>Nom du produit:
+			{{ product.name }}</h2>
+
+		<h2>Prix :
+			{{ product.price }}
+		</h2>
+		{% if product.price <= 185 %}
+			<h3>C'est un bon prix</h3>
+		{% else %}
+			<h3>C'est cher</h3>
+		{% endif %}
+
+		<ul>
+			{% for item in [1,2,3] %}
+				<li>{{ item }}</li>
+			{% endfor %}
+		</ul>
+
+		{# This filter transforms all character into uppercases #}
+		<h2>
+			{{ 'bonjour' | upper }}
+		</h2>
+		{# This filter capitalize the letters #}
+		<h2>
+			{{ 'bonjour' | capitalize }}
+		</h2>
+		{# here below this variable is a html content but not interpreted by browser as it's being protected automatically agains injection thanks to the natural behaviour of TWIG. #}
+		{# To disable this protection we have to use the filter raw #}
+		<h2>
+			{{ h2 | raw }}
+		</h2>
+		{# join filter puts elements of the array side by side and includes the character specified in parenthesis #}
+		<h2>
+			{{ [1,2,3] | join('-')}}</h2>
+
+		<h2>
+			{{ [1,2,3] | map(a => a * 2) | join(' ') }}</h2>
+
+		{% for item in [1, 2, 3] | filter(a => a > 1) %}
+			{{ item }}
+		{% endfor %}
+
+		{# Cette date est un timestamp, il faut la convertir #}
+		<h2>last update:
+			{{ product.lastUpdate | date('d/m/Y') }}</h2>
+
+		<h2>last update:
+			{{ product.lastUpdate | format_datetime(pattern='d MMMM Y', locale='fr') }}</h2>
+
+		<img src="{{ asset('./images/space.jpg')}}" alt="">
+
+        <a href="{{ path('aboutList') }}">Lien</a>
+	</body>
+</html>
