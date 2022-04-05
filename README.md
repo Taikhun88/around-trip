@@ -30,3 +30,5 @@ See the example
 Use of prefix for the methods routes. Giving a common starting route defined above the class.  
 See the example
 
+In routes.yaml, you can define a redirection for anypage. It's pretty useful when you had a former page using different path thats changed to an update or any other reason. This redirection can use a few more options such as PERMANENT and keepQueryParams. 
+See the example in routes.yaml
